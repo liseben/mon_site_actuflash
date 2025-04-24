@@ -1,0 +1,330 @@
+
+body
+{
+    font-size: medium;
+    /* font-size:10px; */
+    width:600px;
+    margin:auto;
+}
+
+a
+{
+    text-decoration: none;
+    color:black;
+}
+
+div#txt
+{
+    float:right;
+    width:5cm;
+    background-color: red;
+}
+
+header h1
+{
+    font-family: Arial, sans-serif;
+    font-size:large;
+    text-align:center;
+}
+
+header h1 img
+{
+    width: 50px;
+}
+
+
+header div.button_bar
+{
+    background-color:Cornsilk ;
+}
+
+header div.search_bar
+{
+    text-align:right;
+    background-color:Cornsilk ;
+}
+
+
+div.login
+{
+    float:right;
+    /* background-color:white; */
+}
+
+div.produit
+{
+    background-color:white;
+    border:blue 2px solid;
+    width:6cm;
+    height:5.5cm;
+    float:left;
+    margin:1mm;
+    padding:1mm;
+    /* overflow-y:scroll;  */
+}
+
+main article.main_article
+{
+    background-color:white;
+    border:green 2px solid;
+    width:20cm;
+    margin:auto;
+    padding:1mm;
+}
+
+main article.main_article img
+{
+    width:100%;
+}
+
+
+article.breaking
+{
+    background-color:white;
+    border:blue 2px solid;
+    width:10cm;
+    /*height:7cm;*/
+    float:left;
+    margin:1mm;
+    padding:1mm;
+    /* overflow-y:scroll;  */
+}
+
+article.breaking img
+{
+    width:100%;
+}
+
+aside
+{
+    float:right;
+    width:10cm;
+    margin:1mm;
+    padding:1mm;
+}
+
+article.side
+{
+    background-color:white;
+    border:blue 2px solid;
+    width:100%;
+    margin:1mm;
+    padding:1mm;
+}
+
+div.produit div.formule
+{
+    font-weight:bold;
+}
+
+div.produit ul li
+{
+}
+
+div.produit .prix
+{
+    background-color:lightgreen;
+}
+
+div.produit .activation
+{
+    background-color:yellow;
+}
+
+div.produit .in_cart
+{
+    /* background-color:plum; */
+    color:DarkMagenta;
+    font-weight:bold;
+}
+
+div.recap table
+{
+    border:blue 1px solid;
+    margin:2px;
+    padding:2px;
+}
+
+div.recap td
+{
+    background-color:whitesmoke;
+    margin:0;
+    padding:2px;
+    border-width: 1px 0;
+    border-color:blue;
+}
+
+div.recap td.total ,
+div.recap th.total
+{
+    border-top: blue 2px solid;
+    border-bottom: blue 2px solid;
+    margin:2px;
+    padding:2px;
+    font-weight:bold;
+}
+
+div.recap td.prix
+{
+    font-family: Courier, monospace ;
+    text-align: right;
+}
+
+hr
+{
+    clear: both;
+}
+
+header, footer
+{
+    background-color:lightcyan ;
+}
+
+footer img
+{
+    width: 40px;
+    height: 30px;
+}
+
+/* Menu */
+ul.menu
+{
+    padding:0;
+    margin:0;
+    list-style-type:none;
+    /*text-align:right;*/
+}
+
+ul.menu li
+{
+    display:inline-block;
+    text-decoration:none;
+    padding:5px;
+}
+
+main section.breaking article
+{
+    background-color: lightgray;
+}
+
+main section.other article
+{
+    background-color: lime;
+}
+
+main section.breaking article h1
+{
+    font-size: 16px;
+}
+
+main section.breaking article h2
+{
+    font-size: 14px;
+}
+
+/*css footer*/
+
+.footer {
+    background-color: #0d0d0d;
+    color: #fff;
+    padding: 50px 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #424242;
+}
+
+.footer-column {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.footer-column:last-child {
+    margin-right: 0;
+}
+
+.footer h3 {
+    color: #20b2aa;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer li {
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.newsletter-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #424242;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.newsletter-form button {
+    background-color: #20b2aa;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.footer-middle {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #424242;
+}
+
+.footer-logo {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #20b2aa;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    color: #999;
+}
+
+.legal-links a {
+    color: #999;
+    margin: 0 10px;
+}
