@@ -27,7 +27,7 @@ function include_mvc_php_files()
 // ROUTER
 session_start();
 
-include_mvc_php_files(); //il inclu tous les fichiers php
+include_mvc_php_files(); // il inclu tous les fichiers php
 
 // select page to load, ie. function to call
 // $page = @$_GET['page'] ?: 'home';

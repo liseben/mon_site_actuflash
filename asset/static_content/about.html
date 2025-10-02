@@ -1,18 +1,591 @@
-<section id="a-propos" style="max-width: 800px; margin: auto; padding: 2rem;">
-    <h2>À propos de <span style="color: #e63946;">Actu</span><span style="color: #1d3557;">Flash</span></h2>
-    <p>
-        <strong>ActuFlash</strong> est un site de presse en ligne conçu dans le cadre d’un projet scolaire, avec pour ambition de proposer une expérience d’information moderne, dynamique et accessible à tous.
-    </p>
-    <p>
-        Notre plateforme couvre une grande variété de sujets, allant de l’actualité internationale et nationale à la politique, la culture, le sport, l’économie et bien plus encore. Chaque article est rédigé avec rigueur, clarté et un souci constant de véracité.
-    </p>
-    <p>
-        L’objectif d’<strong>ActuFlash</strong> est de permettre aux lecteurs de rester informés rapidement et efficacement, grâce à une interface intuitive, des rubriques bien organisées et un affichage pensé pour tous les écrans.
-    </p>
-    <p>
-        Ce projet est également un exercice d’application des principes du <abbr title="Modèle-Vue-Contrôleur">MVC</abbr>, intégrant des notions de développement web, de design responsive, de gestion de contenu et de programmation orientée objet(plus ou moins) ici plutot avec un framework(AwebWiz) orienté procdural Fourni par Mr Alain Wafflard.
-    </p>
-    <p>
-        Merci de votre visite et bonne lecture sur <strong>ActuFlash</strong> !
-    </p>
-</section>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>À Propos</title>
+    <style>
+        .about-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .about-section h3 {
+            color: #e63946;
+            border-bottom: 2px solid #1d3557;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+        }
+
+        .about-section h4 {
+            color: #1d3557;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .about-section ul {
+            padding-left: 20px;
+        }
+
+        .about-section li {
+            margin-bottom: 8px;
+        }
+
+        .about-section code {
+            background-color: #f8f9fa;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+            color: #e63946;
+        }
+
+        .credits {
+            font-style: italic;
+            text-align: center;
+            background-color: #1d3557;
+            color: white;
+            padding: 15px;
+        }
+
+        .credits h3 {
+            color: white;
+            border-bottom-color: #e63946;
+        }
+
+        .credits p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+<h2>À propos de <span style="color: #e63946;">Actu</span><span style="color: #1d3557;">Flash</span> Backend</h2>
+
+<div class="about-section">
+    <h3>Présentation du Projet</h3>
+    <p><strong>ActuFlash</strong> est un site de presse en ligne développé dans le cadre du cours 4IPW3 (Développement Web) à l'ISFCE. Cette application web propose une expérience d'information moderne, conviviale et interactive, où les utilisateurs peuvent consulter des articles de presse, effectuer des recherches par dates, gérer leurs articles favoris et personnaliser leur expérience utilisateur.</p>
+</div>
+
+<div class="about-section">
+    <h3>Technologies et Architecture</h3>
+    <p>Ce projet est développé selon l'architecture <strong>Model-View-Controller (MVC)</strong> à l'aide du framework <strong>AWebWiz</strong>, fourni par le professeur M. Alain Wafflard. Cette architecture permet une séparation claire des responsabilités :</p>
+    <ul>
+        <li><strong>Modèle</strong> : gestion des données et interaction avec la base de données</li>
+        <li><strong>Vue</strong> : présentation et affichage des pages</li>
+        <li><strong>Contrôleur</strong> : traitement des requêtes et coordination</li>
+    </ul>
+    <p>Le backend est entièrement développé en <strong>PHP</strong>, avec une base de données <strong>MySQL</strong> pour le stockage des articles et autres informations.</p>
+</div>
+
+<div class="about-section">
+    <h3>Fonctionnalités Implémentées - Groupe R (Elisabeth Benga)</h3>
+
+    <h4>1. Source des Pages Statiques</h4>
+    <p><strong>Consigne respectée :</strong> "source des pages statiques : fichiers html"</p>
+    <ul>
+        <li><strong>Implémentation :</strong> Fichiers HTML stockés dans le répertoire <code>asset/static_content/</code></li>
+        <li><strong>Pages disponibles :</strong>
+            <ul>
+                <li>Page d'accueil (home.php)</li>
+                <li>Page d'article individuel (article.php)</li>
+                <li>Page de favoris (favoris.php)</li>
+                <li>Page de recherche (search.php)</li>
+                <li>Page "À propos" (cette page)</li>
+                <li>Page de catégories (categories.php)</li>
+            </ul>
+        </li>
+        <li><strong>Fonctionnement :</strong> Chargement dynamique via <code>get_static_content($name)</code></li>
+    </ul>
+
+    <h4>2. Système d'Authentification</h4>
+    <p><strong>Consigne respectée :</strong> "sauvegarde de l'identification (login) : file"</p>
+    <ul>
+        <li><strong>Méthode de sauvegarde :</strong> Fichier texte <code>utilisateurs_loggers.txt</code></li>
+        <li><strong>Source des utilisateurs :</strong> Fichier CSV <code>login.csv</code></li>
+        <li><strong>Fonctionnalités :</strong>
+            <ul>
+                <li>✅ Connexion via login/mot de passe</li>
+                <li>✅ Sauvegarde des informations de connexion dans le fichier</li>
+                <li>✅ Déconnexion avec suppression des informations</li>
+                <li>✅ Gestion des rôles utilisateur (admin/user)</li>
+            </ul>
+        </li>
+        <li><strong>Identifiants de test :</strong>
+            <ul>
+                <li>Login : <code>admin</code>, Mot de passe : <code>admin</code> (rôle administrateur)</li>
+                <li>Login : <code>jacquie</code>, Mot de passe : <code>michel</code> (rôle Super Administrateur)</li>
+                <li>Login : <code>user</code>, Mot de passe : <code>user</code> (rôle utilisateur simple)</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>3. Menu de Navigation</h4>
+    <p><strong>Consigne respectée :</strong> "source du menu : fichiers csv" + "contenu supplémentaire au menu : liste des catégories"</p>
+    <ul>
+        <li><strong>Source du menu :</strong> Fichier CSV <code>menu.csv</code></li>
+        <li><strong>Contenu supplémentaire :</strong> Liste des catégories d'articles</li>
+        <li><strong>Fonctionnalités :</strong>
+            <ul>
+                <li>Navigation entre les différentes pages du site</li>
+                <li>Affichage dynamique des catégories disponibles</li>
+                <li>Adaptation selon le statut d'authentification de l'utilisateur</li>
+                <li>Menu responsive avec Bootstrap</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>4. Présentation des Articles</h4>
+    <p><strong>Consigne respectée :</strong> "présentation d'articles sur la page d'accueil : liste d'articles de la catégorie 'on n'est pas des pigeons' (10 max)"</p>
+    <ul>
+        <li><strong>Page d'accueil :</strong> Affichage des articles de la catégorie "On n'est pas des pigeons" (max 10)</li>
+        <li><strong>Affichage :</strong>
+            <ul>
+                <li>Titre de l'article avec lien vers le contenu complet</li>
+                <li>Image associée (si disponible) ou image par défaut</li>
+                <li>Accroche/résumé de l'article</li>
+                <li>Date de publication formatée</li>
+                <li>Bouton pour ajouter/retirer des favoris (étoile pleine/vide)</li>
+            </ul>
+        </li>
+        <li><strong>Design :</strong> Grille responsive 2x2 avec effets de survol</li>
+    </ul>
+
+    <h4>5. Système de Recherche</h4>
+    <p><strong>Consigne respectée :</strong> "recherche d'articles par : date min max (slider or other)"</p>
+    <ul>
+        <li><strong>Type de recherche :</strong> Par plage de dates (date minimum et date maximum)</li>
+        <li><strong>Interface :</strong>
+            <ul>
+                <li>Formulaire avec champs de date (format AAAA-MM-JJ)</li>
+                <li>Validation des dates saisies côté serveur</li>
+                <li>Affichage des résultats sous forme de liste d'articles</li>
+                <li>Messages d'erreur informatifs</li>
+            </ul>
+        </li>
+        <li><strong>Fonctionnalités :</strong>
+            <ul>
+                <li>Recherche automatique dès soumission du formulaire</li>
+                <li>Conservation des paramètres de recherche lors des actions sur les favoris</li>
+                <li>Gestion des erreurs et validation des formats de date</li>
+                <li>Vérification et inversion automatique des dates si nécessaire</li>
+                <li>Intégration complète avec le système de favoris</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>6. Gestion des Favoris</h4>
+    <p><strong>Consigne respectée :</strong> "sauvegarde du panier d'articles favoris : session"</p>
+    <ul>
+        <li><strong>Méthode de sauvegarde :</strong> Variable de session <code>$_SESSION['favorites']</code></li>
+        <li><strong>Fonctionnalités :</strong>
+            <ul>
+                <li>✅ Ajout d'articles aux favoris depuis toutes les pages (accueil, recherche, catégories)</li>
+                <li>✅ Suppression individuelle d'articles des favoris</li>
+                <li>✅ Vidage complet des favoris avec confirmation</li>
+                <li>✅ Page dédiée avec compteur d'articles favoris</li>
+                <li>✅ Conservation de l'état et redirection intelligente</li>
+                <li>✅ Indication visuelle intuitive (étoile pleine ★ / vide ☆)</li>
+                <li>✅ Préservation du contexte de navigation</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>7. Options de Présentation</h4>
+    <p><strong>Consigne respectée :</strong> "thème : light or dark or grey" + "font : 3 font colors"</p>
+    <ul>
+        <li><strong>Thèmes disponibles :</strong>
+            <ul>
+                <li>Light (fond clair, texte foncé)</li>
+                <li>Dark (fond foncé, texte clair)</li>
+                <li>Grey (fond gris neutre)</li>
+            </ul>
+        </li>
+        <li><strong>Tailles de police :</strong>
+            <ul>
+                <li>Small (1rem - lecture fine)</li>
+                <li>Medium (1.2rem - taille standard)</li>
+                <li>Large (1.6rem - lecture confortable)</li>
+            </ul>
+        </li>
+        <li><strong>Méthode de sauvegarde :</strong> Variables de session <code>$_SESSION['theme']</code> et <code>$_SESSION['font_size']</code></li>
+        <li><strong>Fonctionnalités :</strong>
+            <ul>
+                <li>Sélection via menus déroulants dans la barre de navigation</li>
+                <li>Application immédiate des changements</li>
+                <li>Conservation des paramètres de page lors des changements</li>
+                <li>Persistance des préférences entre les pages</li>
+                <li>CSS adaptatif avec classes dynamiques</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>8. Gestion des Catégories</h4>
+    <ul>
+        <li><strong>Fonctionnalité développée :</strong> Navigation par catégories d'articles</li>
+        <li><strong>Implémentation :</strong>
+            <ul>
+                <li>✅ Récupération dynamique des catégories depuis la base de données</li>
+                <li>✅ Affichage en grille responsive (3 par ligne)</li>
+                <li>✅ Navigation vers les articles de chaque catégorie</li>
+                <li>✅ Intégration avec le système de favoris</li>
+                <li>✅ Design cohérent avec le reste du site</li>
+                <li>✅ Messages informatifs si aucun article trouvé</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>9. Base de Données</h4>
+    <ul>
+        <li><strong>Connexion :</strong> PDO avec MySQL/MariaDB pour une sécurité optimale</li>
+        <li><strong>Tables principales :</strong>
+            <ul>
+                <li><code>t_article</code> : articles de presse avec tous leurs détails</li>
+                <li><code>t_category</code> : catégories d'articles</li>
+            </ul>
+        </li>
+        <li><strong>Interactions développées :</strong>
+            <ul>
+                <li>Récupération des articles pour la page d'accueil par catégorie</li>
+                <li>Récupération des articles par catégorie individuelle</li>
+                <li>Recherche d'articles par plage de dates</li>
+                <li>Récupération des détails d'un article spécifique</li>
+                <li>Récupération des articles favoris avec gestion d'erreurs</li>
+                <li>Requêtes optimisées avec jointures et ordre chronologique</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="about-section">
+    <h3>Guide de Test et Validation</h3>
+
+    <h4>Identifiants de connexion</h4>
+    <ul>
+        <li><strong>Super Administrateur :</strong> Login <code>admin</code> / Mot de passe <code>admin</code></li>
+        <li><strong>Administrateur :</strong> Login <code>jacquie</code> / Mot de passe <code>michel</code></li>
+        <li><strong>Utilisateur :</strong> Login <code>user</code> / Mot de passe <code>user</code></li>
+    </ul>
+
+    <h4>Mots-clés pour tester la recherche par date</h4>
+    <p>Pour tester la fonctionnalité de recherche par date, utilisez les plages suivantes :</p>
+    <ul>
+        <li><strong>Articles récents :</strong> 2023-01-01 à 2024-12-31</li>
+        <li><strong>Articles de 2022 :</strong> 2022-01-01 à 2022-12-31</li>
+        <li><strong>Articles économiques :</strong> 2023-06-01 à 2024-02-28</li>
+        <li><strong>Plage spécifique :</strong> 2024-02-01 à 2024-02-28</li>
+    </ul>
+
+    <h4>Liens importants à tester</h4>
+    <ul>
+        <li><strong>Page d'accueil :</strong> Vérifier l'affichage des articles "On n'est pas des pigeons", tester les favoris et les options de présentation</li>
+        <li><strong>Page de recherche :</strong> Saisir dates valides/invalides, tester l'inversion automatique, ajouter résultats aux favoris</li>
+        <li><strong>Page des favoris :</strong> Vérifier le compteur, tester suppression individuelle et vidage complet</li>
+        <li><strong>Page des catégories :</strong> Cliquer sur différentes catégories, vérifier l'affichage des articles</li>
+        <li><strong>Navigation :</strong> Tester les changements de thème et taille de police en temps réel</li>
+    </ul>
+</div>
+
+<div class="about-section">
+    <h3>Points d'Attention Techniques</h3>
+    <ul>
+        <li><strong>Configuration serveur :</strong> Nécessite WAMP/XAMPP avec MySQL sur port 3307</li>
+        <li><strong>Base de données :</strong> Doit être nommée exactement <code>press_2024_v03</code></li>
+        <li><strong>Fichiers requis :</strong> <code>login.csv</code>, <code>menu.csv</code>, dossier <code>asset/static_content/</code></li>
+        <li><strong>Sessions PHP :</strong> Nécessite que les sessions soient activées</li>
+        <li><strong>Permissions :</strong> Dossier <code>asset/</code> accessible en écriture</li>
+    </ul>
+</div>
+
+<div class="about-section">
+    <h3>Variables de Configuration</h3>
+    <ul>
+        <li><code>DATABASE_TYPE</code> : "SQL" (dans model.php)</li>
+        <li><code>MACHINE</code> : "classe38" ou "home" selon l'environnement</li>
+        <li><code>AJAX_ENABLED</code> : true/false pour activer/désactiver AJAX (préparation frontend)</li>
+        <li><code>$debug</code> : true/false pour l'affichage des variables de session</li>
+    </ul>
+</div>
+
+<h2>À propos de <span style="color: #e63946;">Actu</span><span style="color: #1d3557;">Flash</span> Frontend</h2>
+
+<div class="about-section">
+    <h3>Livrable Frontend - Single Page Application (SPA)</h3>
+    <p><strong>Date du livrable</strong> : 19 mai 2025</p>
+    <p><strong>Architecture</strong> : Single Page Application (SPA) utilisant jQuery et AJAX</p>
+    <p><strong>Conformité</strong> : Respect intégral des consignes du groupe R avec système double MPA/SPA</p>
+</div>
+
+<div class="about-section">
+    <h3>✅ Fonctionnalités Implémentées et Testées</h3>
+
+    <h4>1. Affichage des détails d'articles (SPA) ✅</h4>
+    <ul>
+        <li><strong>Consigne respectée</strong> : "on mouse over - affichage à droite de la page"</li>
+        <li><strong>Comment tester</strong> :
+            <ul>
+                <li>Aller sur la page d'accueil</li>
+                <li>Survoler un article avec la souris</li>
+                <li>Observer l'affichage des détails dans le panneau de droite</li>
+            </ul>
+        </li>
+        <li><strong>Détails affichés</strong> :
+            <ul>
+                <li>Tous utilisateurs : titre, accroche, image, date</li>
+                <li>Administrateurs : + catégorie, temps de lecture, ID</li>
+            </ul>
+        </li>
+        <li><strong>Fichiers concernés</strong> : <code>detail.js</code>, <code>detail_ajax.php</code></li>
+    </ul>
+
+    <h4>2. Gestion asynchrone des favoris (SPA) ✅</h4>
+    <ul>
+        <li><strong>Consignes respectées</strong> : "gestion des favoris en variable session"</li>
+        <li><strong>Comment tester</strong> :
+            <ul>
+                <li>Sur n'importe quelle page avec articles, cliquer sur "☆ Ajouter"</li>
+                <li>Observer le changement immédiat en "★ Favori" sans rechargement</li>
+                <li>Tester la limite de 5 favoris (message d'erreur au 6ème)</li>
+                <li>Aller sur la page Favoris et cliquer "Vider tous mes favoris"</li>
+                <li>Observer la suppression sans rechargement</li>
+            </ul>
+        </li>
+        <li><strong>Fonctionnalités AJAX</strong> :
+            <ul>
+                <li>✅ Ajouter un article aux favoris</li>
+                <li>✅ Retirer un article des favoris</li>
+                <li>✅ Effacer tous les favoris</li>
+                <li>✅ Limite de 5 favoris maximum</li>
+                <li>✅ Notifications en temps réel</li>
+            </ul>
+        </li>
+        <li><strong>Fichiers concernés</strong> : <code>articles.js</code>, <code>favorite_ajax.php</code></li>
+    </ul>
+
+    <h4>3. Outil de recherche multi-critères (SPA) ✅</h4>
+    <ul>
+        <li><strong>Consignes respectées</strong> : "mot-clé + readtime min max (slider) + category (dropdown list)" + date(calendrier)</li>
+        <li><strong>Comment tester</strong> :
+            <ul>
+                <li>Aller sur la page "Recherche"</li>
+                <li>Tester les critères de recherche suggérés (voir section "Mots-clés à tester")</li>
+                <li>Observer l'affichage en temps réel des critères sélectionnés</li>
+                <li>Cliquer sur "☆ Ajouter" dans les résultats (AJAX)</li>
+            </ul>
+        </li>
+        <li><strong>Layout implémenté</strong> : 3 colonnes (formulaire + bouton recherche + résultats)</li>
+        <li><strong>Critères disponibles</strong> :
+            <ul>
+                <li>Mot-clé (titre et contenu)</li>
+                <li>Temps de lecture (sliders min/max synchronisés)</li>
+                <li>Catégorie (menu déroulant)</li>
+                <li>Date (menu déroulant)</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>4. Options de présentation (SPA) ✅</h4>
+    <ul>
+        <li><strong>Consignes respectées</strong> : "thème : yellow or rose or blue" + "font : 3 font sizes"</li>
+        <li><strong>Comment tester</strong> :
+            <ul>
+                <li>Dans la barre de navigation, utiliser les menus déroulants</li>
+                <li>Changer le thème (Jaune/Rose/Bleu)</li>
+                <li>Changer la taille de police (Petite/Moyenne/Grande)</li>
+                <li>Observer les changements instantanés sans rechargement</li>
+                <li>Naviguer entre les pages : les préférences sont conservées</li>
+            </ul>
+        </li>
+        <li><strong>Persistence</strong> : Préférences sauvées dans localStorage</li>
+        <li><strong>Fichier concerné</strong> : <code>theme.js</code></li>
+    </ul>
+
+    <h4>5. Système double Architecture ✅</h4>
+    <ul>
+        <li><strong>Consigne respectée</strong> : "système double MPA/SPA configurable"</li>
+        <li><strong>Configuration</strong> : Variable <code>AJAX_ENABLED</code> dans <code>app.php</code></li>
+        <li><strong>Comment tester</strong> :
+            <ul>
+                <li>Par défaut : <code>AJAX_ENABLED = true</code> (mode SPA)</li>
+                <li>Pour tester MPA : changer à <code>false</code> et recharger</li>
+                <li>Observer la différence de comportement des favoris</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="about-section">
+    <h3>🧪 Guide de Test Complet</h3>
+
+    <h4>Liens intéressants à cliquer</h4>
+    <ul>
+        <li><strong>Page d'accueil</strong> :
+            <ul>
+                <li>Survoler les articles → détails à droite</li>
+                <li>Cliquer "☆ Ajouter" → AJAX favoris</li>
+                <li>Cliquer sur un titre → article complet</li>
+            </ul>
+        </li>
+        <li><strong>Page de recherche</strong> :
+            <ul>
+                <li>Utiliser les sliders temps de lecture</li>
+                <li>Sélectionner une catégorie</li>
+                <li>Cliquer "Rechercher"</li>
+                <li>Ajouter des résultats aux favoris</li>
+            </ul>
+        </li>
+        <li><strong>Page des favoris</strong> :
+            <ul>
+                <li>Cliquer "Vider tous mes favoris" → AJAX</li>
+                <li>Cliquer "★ Retirer" sur un article</li>
+            </ul>
+        </li>
+        <li><strong>Page de catégories</strong> :
+            <ul>
+                <li>Cliquer sur une catégorie</li>
+                <li>Gérer les favoris depuis les articles</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>Mots-clés à utiliser dans l'outil de recherche</h4>
+    <ul>
+        <li><strong>Mots-clés suggérés</strong> :
+            <ul>
+                <li>"inflation" → articles économiques</li>
+                <li>"agricoles" → articles sur l'agriculture</li>
+                <li>"stations" → articles sur les stations-service</li>
+                <li>"Lina" → articles sur les faits divers</li>
+                <li>"Hugo" → articles sociaux</li>
+            </ul>
+        </li>
+        <li><strong>Temps de lecture</strong> : Tester entre 0-60 minutes (la plupart des articles sont courts max 57 min))</li>
+        <li><strong>Catégories disponibles</strong> : Utiliser le menu déroulant pour voir toutes les catégories</li>
+    </ul>
+
+    <h4>Identifiants de connexion</h4>
+    <ul>
+        <li><strong>Administrateur</strong> :
+            <ul>
+                <li>Login : <code>jacquie</code></li>
+                <li>Mot de passe : <code>michel</code></li>
+                <li>Avantage : Voit plus de détails dans l'aperçu des articles</li>
+            </ul>
+        </li>
+        <li><strong>Super administrateur</strong> :
+            <ul>
+                <li>Login : <code>admin</code></li>
+                <li>Mot de passe : <code>admin</code></li>
+                <li>Avantage : Voit plus de détails dans l'aperçu des articles</li>
+            </ul>
+        </li>
+        <li><strong>Utilisateur standard</strong> :
+            <ul>
+                <li>Login : <code>user</code></li>
+                <li>Mot de passe : <code>user</code></li>
+                <li>Fonctionnalités normales</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="about-section">
+    <h3>⚠️ Limitations et Known Bugs</h3>
+    <h4>Navigateurs testés</h4>
+    <ul>
+        <li>✅ Chrome 120+ (recommandé)</li>
+        <li>✅ Firefox 115+</li>
+        <li>⚠️ Safari (quelques différences visuelles mineures)</li>
+        <li>⚠️ Edge (compatible mais non optimisé)</li>
+    </ul>
+</div>
+
+<div class="about-section">
+    <h3>📈 Améliorations par rapport aux versions précédentes</h3>
+
+    <h4>Version Backend → Frontend (19 mai 2025)</h4>
+    <ul>
+        <li><strong>Ajouts majeurs</strong> :
+            <ul>
+                <li>✅ Architecture SPA complète avec AJAX</li>
+                <li>✅ Gestion des favoris sans rechargement</li>
+                <li>✅ Aperçu dynamique des articles</li>
+                <li>✅ Options de présentation en temps réel</li>
+            </ul>
+        </li>
+        <li><strong>Prise d'initiaves: améliorations UX</strong> :
+            <ul>
+                <li>✅ Notifications utilisateur pour les actions</li>
+                <li>✅ Désactivation des boutons pendant les requêtes</li>
+                <li>✅ Gestion des erreurs avec messages explicites</li>
+                <li>✅ Responsive design complet</li>
+                <li>✅ Gestion du fallback(menu.js en cas d'échec d'ajax une page minimaliste s'affiche)</li>
+            </ul>
+        </li>
+        <li><strong>Architecture technique</strong> :
+            <ul>
+                <li>✅ Séparation claire JavaScript/PHP</li>
+                <li>✅ Contrôleurs AJAX dédiés</li>
+                <li>✅ Système configurable MPA/SPA</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>Respect des consignes spécifiques Groupe R</h4>
+    <ul>
+        <li>✅ <strong>Détails articles</strong> : Survol → affichage à droite</li>
+        <li>✅ <strong>Favoris</strong> : Session avec AJAX complet</li>
+        <li>✅ <strong>Recherche</strong> : Mot-clé + readtime + catégorie + date</li>
+        <li>✅ <strong>Thèmes</strong> : Yellow/Rose/Blue</li>
+        <li>✅ <strong>Police</strong> : 3 tailles (Small/Medium/Large)</li>
+        <li>✅ <strong>Date</strong> : Date min et Date max</li>
+        <li>✅ <strong>Bonus</strong> : Menu dynamique préparé (représenté par le mot chargement... quand on raffraichit la page)</li>
+    </ul>
+</div>
+
+<div class="about-section">
+    <h4>Variables de configuration importantes</h4>
+    <ul>
+        <li><code>AJAX_ENABLED</code> dans <code>app.php</code> : Active/désactive le mode SPA</li>
+        <li><code>$debug</code> dans <code>common.php</code> : Active l'affichage des variables de session</li>
+    </ul>
+</div>
+
+<div class="about-section">
+    <h3>📋 Checklist de Validation</h3>
+
+    <h4>Fonctionnalités principales</h4>
+    <ul>
+        <li>✅ SPA fonctionnelle sans rechargements</li>
+        <li>✅ Favoris AJAX avec limite de 5</li>
+        <li>✅ Détails articles au survol</li>
+        <li>✅ Recherche multi-critères</li>
+        <li>✅ Thèmes et polices changeables</li>
+        <li>✅ Responsive design</li>
+        <li>✅ Double système MPA/SPA</li>
+    </ul>
+
+    <h4>Qualité technique</h4>
+    <ul>
+        <li>✅ Code JavaScript organisé et commenté</li>
+        <li>✅ Gestion d'erreurs AJAX</li>
+        <li>✅ CSS adaptatif aux thèmes</li>
+        <li>✅ Architecture MVC respectée</li>
+        <li>✅ Sécurité sessions maintenue</li>
+    </ul>
+</div>
+
+<div class="about-section credits">
+    <h3>Informations de Développement</h3>
+    <p><strong>Développeur</strong> : Elisabeth Benga - Groupe R</p>
+    <p><strong>Cours</strong> : 4IPW3 - Développement Web (Frontend SPA)</p>
+    <p><strong>Institution</strong> : ISFCE Etterbeek</p>
+    <p><strong>Professeur</strong> : Alain Wafflard</p>
+    <p><strong>Date de finalisation</strong> : 02 avril 2025</p>
+    <p><strong>Version</strong> : Backend complet</p>
+    <p><strong>Date de finalisation</strong> : 19 mai 2025</p>
+    <p><strong>Version</strong> : Frontend SPA complet</p>
+    <p><em>Application prête pour évaluation et démonstration.</em></p>
+</div>
+
+</body>
+</html>

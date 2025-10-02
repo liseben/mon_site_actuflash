@@ -12,3 +12,19 @@ function get_menu_csv()
     }
     return $menu_aa;
 }
+
+/**
+ * retourne l'objet PDO
+ * crée l'objet PDO s'il n'existe pas
+ */
+
+function get_pdo()
+{
+    static $pdo;
+
+    if(empty($pdo))
+    {
+        $pdo = new PDO(DATABASE_DSN, DATABASE_USERNAME, DATABASE_PASSWORD);
+    }
+    return $pdo;
+}

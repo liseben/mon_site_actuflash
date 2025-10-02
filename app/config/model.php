@@ -2,10 +2,23 @@
 
 const MACHINE = "home"; // "classe38" ou  "home" ou ... ce qu'on veut
 
-const DATABASE_TYPE = "MySql";  // "csv"
-const DATABASE_NAME = "4ipdw_2023";
+/**
+ * DATABASE_Type : "SQL" ou "JSON"
+ */
+const DATABASE_TYPE = "JSON";
 
-switch(MACHINE) {
+
+switch (DATABASE_TYPE){
+    case  "SQL":
+        define("DATABASE_NAME", "press_2024_v03");
+        break;
+    case  "JSON":
+        define("DATABASE_NAME", "../asset/database/article.json");
+        break;
+}
+
+
+switch(MACHINE) { // config pour gérer les machines soit à la maison , soit à l'école
 	// ISFCE, classe 38
 	case "classe38":
 		define( "DATABASE_PORT", 3307 ); 	// MAriaDB
@@ -19,6 +32,9 @@ switch(MACHINE) {
 		break;
 }
 
-const DSN =  "mysql:host=localhost;dbname=4ipdw_2023;port=".DATABASE_PORT.";";
+const DATABASE_DSN =  "mysql:host=localhost;dbname=".DATABASE_NAME.";port=".DATABASE_PORT.";";
 
-// var_dump(DSN);
+
+
+
+//config pour gérer les JSON ou les Base de données
