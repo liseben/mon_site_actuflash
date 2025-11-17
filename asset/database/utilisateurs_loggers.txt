@@ -1,1 +1,1 @@
-user;Utilisateur;2025-05-20 18:47:01user;Utilisateur;2025-10-02 00:23:03
+admin;administrateur;2025-11-16 23:05:30
